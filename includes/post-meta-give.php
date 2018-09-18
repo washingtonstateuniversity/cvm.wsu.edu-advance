@@ -32,7 +32,6 @@ function add_meta_boxes() {
  */
 function display_give_now_meta_box( $post ) {
 	$link_label = get_post_meta( $post->ID, '_wsuwp_cvm_advance_post_give_label', true );
-	$link_label = ( $link_label ) ? $link_label : 'Give Now';
 	$link_url = get_post_meta( $post->ID, '_wsuwp_cvm_advance_post_give_url', true );
 
 	wp_nonce_field( 'wsuwp_cvm_advance_post_give', 'wsuwp_cvm_advance_post_give_nonce' );
