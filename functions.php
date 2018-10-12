@@ -4,14 +4,14 @@ class CVM_WSU_EDU_Advance {
 
 	public static $theme_version = '0.0.1';
 
-	public function __construct() { 
+	public function __construct() {
 
 		$this->setup_theme();
 
 	} // end __construct
 
 
-	private function setup_theme() { 
+	private function setup_theme() {
 
 		require_once __DIR__ . '/includes/theme-functions.php';
 

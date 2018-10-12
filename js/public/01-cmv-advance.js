@@ -1,25 +1,25 @@
 var cmv_advance = {
 
-    init: function() {
+	init: function() {
 
-        cmv_advance.tabs.init();
+		cmv_advance.tabs.init();
 
-    },
+	},
 
-    tabs: {
+	tabs: {
 
-        init: function() {
+		init: function() {
 
-            cmv_advance.tabs.make_tabs();
-            
-        },
+			cmv_advance.tabs.make_tabs();
 
-        make_tabs: function() {
-             
-            jQuery('.cmv-tabs').tabs();
+		},
 
-        }
-    }
+		make_tabs: function() {
+
+			jQuery('.cmv-tabs').tabs();
+
+		}
+	}
 }
 
 cmv_advance.init();

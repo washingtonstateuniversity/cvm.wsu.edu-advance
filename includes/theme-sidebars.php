@@ -2,14 +2,14 @@
 
 class Theme_Sidebars {
 
-	
+
 	public function __construct() {
 
 		add_action( 'widgets_init', array( $this, 'add_sidebars' ) );
 
-	} // End __construct 
+	} // End __construct
 
-	
+
 	public function add_sidebars() {
 
 		$sidebars = array(
