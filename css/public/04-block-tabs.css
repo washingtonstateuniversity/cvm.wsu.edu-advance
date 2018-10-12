@@ -1,0 +1,149 @@
+#block-tabs > ul {
+	list-style: none;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+#block-tabs > ul li {
+	font-size: .8rem;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	text-align: center;
+	background: #ccc;
+	margin-right: 2px;
+	transition: background .3s ease;
+	outline: none;
+}
+
+#block-tabs > ul li a {
+	display: block;
+	padding: 16px;
+}
+
+#block-tabs > ul li a:focus {
+	outline: 0;
+}
+
+#block-tabs > ul li.ui-state-active {
+	background: #eee;
+}
+
+#block-tabs .cmv-tab-panel {
+	background-color: #eee;
+	padding: 24px 40px 60px;
+}
+
+/*.block-tabs ul.tabs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.block-tabs ul.tabs li {
+	background: #ccc;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.block-tabs ul.tabs li.current {
+	background: #ededed;
+	color: #222;
+}
+
+.block-tabs .tab-content {
+	display: none;
+	background: #ededed;
+	padding: 15px;
+}
+
+.block-tabs .tab-content.current {
+	display: inherit;
+}
+
+.block-tabs #tabs > ul,
+.block-tabs #tabs2 > ul {
+	list-style: none;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.block-tabs #tabs > ul li,
+.block-tabs #tabs2 > ul li {
+	font-size: .8rem;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	text-align: center;
+	background: rgba(255, 255, 255, .75);
+	margin-right: 2px;
+	transition: background .3s ease;
+}
+
+.block-tabs #tabs > ul li:last-child,
+.block-tabs #tabs2 > ul li:last-child {
+	margin-right: 0;
+}
+
+.block-tabs #tabs > ul > li > a,
+.block-tabs #tabs2 > ul > li > a {
+	border-bottom: none;
+	color: #000;
+	font-weight: 400;
+	min-height: 3rem;
+	padding: .3rem 0 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.block-tabs .ui-tabs-panel {
+	background: #fff;
+	padding: 2rem;
+}
+
+.block-tabs .ui-tabs-panel:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.block-tabs #tabs > ul li.ui-state-active,
+.block-tabs #tabs > ul li:hover,
+.block-tabs #tabs2 > ul li.ui-state-active,
+.block-tabs #tabs2 > ul li:hover {
+	background: rgba(255, 255, 255, 1);
+}*/
