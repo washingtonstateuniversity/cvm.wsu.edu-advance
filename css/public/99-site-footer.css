@@ -1,18 +1,18 @@
 #site-footer {
-    margin-left: 198px;
-    padding-left: 2rem;
-    border-top: 2px solid #555;
+	margin-left: 198px;
+	padding-left: 2rem;
+	border-top: 2px solid #555;
 }
 
 #site-footer .content-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 30px 0;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px 0;
 }
 
 #site-footer .footer-item {
-    flex-basis: 20%;
-    padding: 22px;
-    box-sizing: border-box;
-    font-size: 12px;
+	flex-basis: 20%;
+	padding: 22px;
+	box-sizing: border-box;
+	font-size: 12px;
 }

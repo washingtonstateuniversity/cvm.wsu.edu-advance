@@ -1,6 +1,6 @@
 <?php
 
-$featured = cmv_get_featured_posts(1, 0, 'large');
+$featured = cmv_get_featured_posts( 1, 0, 'large' );
 
 $feature = $featured[0];
 

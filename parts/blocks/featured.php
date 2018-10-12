@@ -6,7 +6,7 @@ $featured = cmv_get_featured_posts();
 <div id="featured-block">
 	<h2>Features</h2>
 	<div class="featured-set-wrapper">
-		<?php foreach( $featured as $feature ) : ?>
+		<?php foreach ( $featured as $feature ) : ?>
 		<article>
 			<h1><?php echo esc_html( $feature['title'] ); ?></h1>
 			<figure style="background-image:url(<?php echo esc_url( $feature['img_src'] ); ?>)">

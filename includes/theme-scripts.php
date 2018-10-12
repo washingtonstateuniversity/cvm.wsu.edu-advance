@@ -7,7 +7,7 @@ class Theme_Scripts {
 
 	public function __construct() {
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'add_dev_scripts'), 99999 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'add_dev_scripts' ), 99999 );
 
 	} // End __construct
 
@@ -23,7 +23,7 @@ class Theme_Scripts {
 		);
 
 		$dev_scripts = array(
-			'01-cmv-advance.js'
+			'01-cmv-advance.js',
 		);
 
 		foreach ( $dev_styles as $style ) {
@@ -34,7 +34,7 @@ class Theme_Scripts {
 
 		foreach ( $dev_scripts as $script ) {
 
-			wp_enqueue_script( 'theme-' . $script, get_stylesheet_directory_uri() . '/js/public/' . $script, array('jquery','jquery-ui-tabs'), cvm_get_theme_version(), true );
+			wp_enqueue_script( 'theme-' . $script, get_stylesheet_directory_uri() . '/js/public/' . $script, array( 'jquery', 'jquery-ui-tabs' ), cvm_get_theme_version(), true );
 
 		} // End foreach
 

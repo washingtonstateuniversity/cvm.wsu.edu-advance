@@ -33,12 +33,6 @@ function cmv_get_featured_posts( $count = 6, $offset = 1, $img_size = 'medium', 
 				'excerpt'   => $the_query->post->post_excerpt,
 			);
 
-			//ob_start();
-
-			//the_excerpt();
-
-		   // $feature['excerpt'] = ob_get_clean();
-
 			ob_start();
 
 			the_content();
