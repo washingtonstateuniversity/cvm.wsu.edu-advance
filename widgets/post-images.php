@@ -31,7 +31,7 @@ class Post_Images_Widget extends WP_Widget {
 
 				$post_images_ids = explode( ',', $post_images_ids_string );
 
-				echo $args['before_widget'];
+				echo wp_kses_post( $args['before_widget'] );
 
 				if ( ! empty( $instance['title'] ) ) {
 
@@ -51,10 +51,9 @@ class Post_Images_Widget extends WP_Widget {
 
 				} // End foreach
 
-				echo $args['after_widget'];
+				echo wp_kses_post( $args['after_widget'] );
 
 			} // End if
-
 		} // End if
 
 	}

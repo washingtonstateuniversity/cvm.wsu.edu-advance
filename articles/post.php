@@ -131,12 +131,12 @@
 				?>
 			</div><!-- .author-avatar -->
 			<div class="author-description">
-				<h2><?php printf( __( 'About %s', 'twentytwelve' ), wp_kses_post( get_the_author() ) ); ?></h2>
+				<h2>About <?php wp_kses_post( get_the_author() ); ?></h2>
 				<p><?php the_author_meta( 'description' ); ?></p>
 				<?php if ( '1' === spine_get_option( 'show_author_page' ) ) : ?>
 				<div class="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
+					View all posts by <?php get_the_author(); ?> <span class="meta-nav">&rarr;</span>>
 					</a>
 				</div><!-- .author-link	-->
 				<?php endif; ?>
