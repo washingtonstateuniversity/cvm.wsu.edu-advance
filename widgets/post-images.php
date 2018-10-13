@@ -35,7 +35,7 @@ class Post_Images_Widget extends WP_Widget {
 
 				if ( ! empty( $instance['title'] ) ) {
 
-					echo wp_kses_post( $args['before_title'] ) . apply_filters( 'widget_title', $instance['title'] ) . wp_kses_post( $args['after_title'] );
+					echo wp_kses_post( $args['before_title'] ) . esc_html( apply_filters( 'widget_title', $instance['title'] ) ) . wp_kses_post( $args['after_title'] );
 
 				} // End if
 

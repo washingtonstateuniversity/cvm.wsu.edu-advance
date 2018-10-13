@@ -38,7 +38,6 @@ class Theme_Customizer {
 			)
 		);
 
-
 		$wp_customize->add_control(
 			'home_tab_1_control',
 			array(
