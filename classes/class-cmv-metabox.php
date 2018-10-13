@@ -19,7 +19,7 @@ class CVM_Metabox {
 
 		if ( method_exists( $this, 'register_metabox' ) ) {
 
-			add_action('add_meta_boxes', array( $this, 'register_metabox' ) );
+			add_action( 'add_meta_boxes', array( $this, 'register_metabox' ) );
 
 		} // end if
 
@@ -35,7 +35,6 @@ class CVM_Metabox {
 	public function save_post( $post_id, $post, $update ) {
 
 		if ( in_array( $post->post_type, $this->post_types, true ) && method_exists( $this, 'get_sanitize_settings' ) ) {
-
 
 			if ( ! $update ) {
 

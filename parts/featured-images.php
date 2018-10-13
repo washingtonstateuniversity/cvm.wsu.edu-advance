@@ -7,7 +7,6 @@ if ( spine_has_featured_image() ) {
 	if ( ! $featured_image_position || sanitize_html_class( $featured_image_position ) !== $featured_image_position ) {
 		$featured_image_position = '';
 	}
-
 } ?>
 <div id="post-featured-banner" <?php if ( ! empty( $featured_image_src ) ) : ?>class="has-image"<?php endif; ?>>
 	<?php if ( ! empty( $featured_image_src ) ) : ?>
