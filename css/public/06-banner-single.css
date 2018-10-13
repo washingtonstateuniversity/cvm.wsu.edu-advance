@@ -1,0 +1,25 @@
+#banner-single {
+	padding-top: 80px;
+	position: relative;
+}
+#banner-single.has-banner-img {
+	padding-top: 0;
+}
+
+#banner-single.has-banner-img header {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 18px 2rem;
+	background-color: rgba(0,0,0,0.7);
+	display: block;
+}
+
+#banner-single.has-banner-img h1 {
+	color: #fff;
+}
+
+#banner-single .featured-image {
+	height: 450px;
+}
