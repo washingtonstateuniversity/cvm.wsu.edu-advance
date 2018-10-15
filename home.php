@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="wsuwp-main" class="<?php echo esc_attr( $main_class ); ?>">
+<main id="wsuwp-main" class="">
 
 	<?php get_template_part( 'parts/headers' ); ?>
 
