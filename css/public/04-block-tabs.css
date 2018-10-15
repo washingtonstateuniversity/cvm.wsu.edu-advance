@@ -9,18 +9,18 @@
 #block-tabs > ul li {
 	font-size: .8rem;
 	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
+		-ms-flex: 1;
+			flex: 1;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+		-ms-flex-pack: center;
+			justify-content: center;
 	text-align: center;
 	background: #ccc;
 	margin-right: 2px;
@@ -88,18 +88,18 @@
 .block-tabs #tabs2 > ul li {
 	font-size: .8rem;
 	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
+		-ms-flex: 1;
+			flex: 1;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+		-ms-flex-pack: center;
+			justify-content: center;
 	text-align: center;
 	background: rgba(255, 255, 255, .75);
 	margin-right: 2px;
@@ -123,11 +123,11 @@
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+		-ms-flex-pack: center;
+			justify-content: center;
 }
 
 .block-tabs .ui-tabs-panel {
