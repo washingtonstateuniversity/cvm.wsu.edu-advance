@@ -19,7 +19,6 @@ class Theme_Scripts {
 			'02-banner-featured.css',
 			'03-block-featured.css',
 			'04-block-tabs.css',
-			'05-issue-post-type.css',
 			'06-banner-single.css',
 			'99-site-footer.css',
 		);
