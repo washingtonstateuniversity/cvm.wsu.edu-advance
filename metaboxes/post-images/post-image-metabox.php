@@ -40,7 +40,7 @@ class Post_Image_Metabox extends CVM_Metabox {
 		$settings = array();
 
 		// phpcs:ignore
-		if ( isset( $_REQUEST['_additional_images'] ) && ! empty( $_REQUEST['_additional_images'] ) ) {
+		if ( isset( $_REQUEST['_additional_images'] ) ) {
 
 			// phpcs:ignore
 			$settings['_additional_images'] = sanitize_text_field( $_REQUEST['_additional_images'] );
