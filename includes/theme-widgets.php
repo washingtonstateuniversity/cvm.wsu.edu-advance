@@ -14,7 +14,11 @@ class Theme_Widgets {
 
 		include_once get_stylesheet_directory() . '/widgets/post-images.php';
 
+		include_once get_stylesheet_directory() . '/widgets/give/post-give.php';
+
 		register_widget( 'Post_Images_Widget' );
+
+		register_widget( 'Post_Give_Widget' );
 
 	} // End add_widgets
 
