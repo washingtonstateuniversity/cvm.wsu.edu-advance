@@ -2,4 +2,4 @@
 	<div class="content-wrapper">
 		<?php dynamic_sidebar( 'site_header_right' ); ?>
 	</div>
-</footer><?php endif; ?>
+</div><?php endif; ?>
