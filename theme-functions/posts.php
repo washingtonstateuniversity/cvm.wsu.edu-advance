@@ -61,7 +61,7 @@ function cmv_get_post_image_array( $post_id, $size = 'medium' ) {
 
 		$img_id = get_post_thumbnail_id( $post_id );
 
-		$image_array = cmv_get_post_image_array_by_id( $img_id );
+		$image_array = cmv_get_post_image_array_by_id( $img_id, $size );
 
 	} // End if
 
