@@ -24,6 +24,16 @@ class Theme_Sidebars {
 				'after_title'   => '</h2>',
 			),
 			array(
+				'name'          => __( 'Site Header Right', 'spine' ),
+				'id'            => 'site_header_right',
+				'description'   => '',
+				'class'         => '',
+				'before_widget' => '<div class="site-header-item">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="widgettitle">',
+				'after_title'   => '</h2>',
+			),
+			array(
 				'name'          => __( 'Home Tab 1', 'spine' ),
 				'id'            => 'home_tab_1',
 				'description'   => '',
