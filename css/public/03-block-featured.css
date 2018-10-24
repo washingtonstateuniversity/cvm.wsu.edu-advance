@@ -17,10 +17,6 @@
 	position: relative;
 }
 
-#featured-block article h1 {
-	display: none;
-}
-
 #featured-block figure {
 	padding-bottom: 50%;
 	background-color: #999;

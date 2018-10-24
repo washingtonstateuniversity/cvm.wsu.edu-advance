@@ -1,7 +1,18 @@
-<?php $post_share_placement = spine_get_option( 'post_social_placement' ); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+$post_share_placement = spine_get_option( 'post_social_placement' );
 
+$featured_image_src = ( spine_has_featured_image() ) ? spine_get_featured_image_src() : '';
+
+$featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_image_position', true ) );
+
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="article-header">
+<hgroup class="article-title-banner<?php if ( ! empty( $featured_image_src ) ) : ?> has-featured-image <?php echo esc_attr( $featured_image_position ); ?><?php endif; ?>" style="background-image:url(<?php echo esc_attr( $featured_image_src ); ?>);">
+			<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
+				<h1 class="article-title"><?php the_title(); ?></h1>
+			<?php endif; ?>
+		</hgroup>
 		<hgroup class="source">
 			<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
 			<cite class="article-author">
@@ -21,33 +32,7 @@
 		}
 		?>
 	</header>
-
-	<?php if ( ! is_singular() ) : ?>
-		<div class="article-summary">
-			<?php
-
-			if ( spine_has_thumbnail_image() ) {
-				?><figure class="article-thumbnail"><a href="<?php the_permalink(); ?>"><?php spine_the_thumbnail_image(); ?></a></figure><?php
-			} elseif ( spine_has_featured_image() ) {
-				?><figure class="article-thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'spine-thumbnail_size' ); ?></a></figure><?php
-			}
-
-			// If a manual excerpt is available, default to that. If `<!--more-->` exists in content, default
-			// to that. If an option is set specifically to display excerpts, default to that. Otherwise show
-			// full content.
-			if ( $post->post_excerpt ) {
-				echo wp_kses_post( get_the_excerpt() ) . ' <a href="' . esc_url( get_permalink() ) . '"><span class="excerpt-more-default">&raquo; More ...</span></a>';
-			} elseif ( strstr( $post->post_content, '<!--more-->' ) ) {
-				the_content( '<span class="content-more-default">&raquo; More ...</span>' );
-			} elseif ( 'excerpt' === spine_get_option( 'archive_content_display' ) ) {
-				the_excerpt();
-			} else {
-				the_content();
-			}
-
-			?>
-		</div><!-- .article-summary -->
-	<?php else : ?>
+	<div class="article-content">
 		<div class="article-body">
 			<?php the_content(); ?>
 			<?php
@@ -56,9 +41,8 @@
 				'after' => '</div>',
 			) );
 			?>
-		</div>
-	<?php endif; ?>
-
+		</div><?php if ( is_active_sidebar( 'sidebar' ) ) : ?><div class="article-extra"><?php dynamic_sidebar( 'sidebar' ); ?></div><?php endif; ?>
+	</div>
 	<footer class="article-footer">
 		<?php
 		if ( is_singular() && in_array( $post_share_placement, array( 'bottom', 'both' ), true ) ) {
@@ -130,17 +114,19 @@
 				echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 				?>
 			</div><!-- .author-avatar -->
+			<?php // @codingStandardsIgnoreStart ?>
 			<div class="author-description">
-				<h2>About <?php wp_kses_post( get_the_author() ); ?></h2>
+				<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
 				<p><?php the_author_meta( 'description' ); ?></p>
 				<?php if ( '1' === spine_get_option( 'show_author_page' ) ) : ?>
 				<div class="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-					View all posts by <?php get_the_author(); ?> <span class="meta-nav">&rarr;</span>>
+						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
 					</a>
 				</div><!-- .author-link	-->
 				<?php endif; ?>
 			</div><!-- .author-description -->
+			<?php // @codingStandardsIgnoreEnd ?>
 		</div><!-- .author-info -->
 	<?php endif; ?>
 	</footer><!-- .entry-meta -->

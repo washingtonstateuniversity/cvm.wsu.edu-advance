@@ -20,6 +20,7 @@ class Theme_Scripts {
 			'03-block-featured.css',
 			'04-block-tabs.css',
 			'06-banner-single.css',
+			'07-single-post.css',
 			'99-site-footer.css',
 		);
 

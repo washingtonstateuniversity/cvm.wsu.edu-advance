@@ -1,0 +1,41 @@
+.single-post .gutter .column:not(.gutterless), .guttered {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+.single-post .article-content,
+.single-post .article-footer {
+    padding: 1rem 2rem;
+}
+.single-post .article-header hgroup.source {
+    display: block;
+    padding: 0 2rem;
+}
+.single-post .article-header hgroup h1.article-title {
+    display: block;
+    padding: 2rem;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+article.post .article-extra {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+article.post .article-body {
+    display: inline-block;
+    vertical-align: top;
+    width: 67%;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+article.post .article-title-banner.has-featured-image {
+
+    padding-top: 400px;
+
+}
