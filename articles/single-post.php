@@ -1,5 +1,5 @@
-<?php 
-$post_share_placement = spine_get_option( 'post_social_placement' ); 
+<?php
+$post_share_placement = spine_get_option( 'post_social_placement' );
 
 $featured_image_src = ( spine_has_featured_image() ) ? spine_get_featured_image_src() : '';
 
@@ -8,7 +8,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="article-header">
-<hgroup class="article-title-banner<?php if ( ! empty( $featured_image_src) ) : ?> has-featured-image <?php echo esc_attr( $featured_image_position ); ?><?php endif; ?>" style="background-image:url(<?php echo esc_attr( $featured_image_src ); ?>);">
+<hgroup class="article-title-banner<?php if ( ! empty( $featured_image_src ) ) : ?> has-featured-image <?php echo esc_attr( $featured_image_position ); ?><?php endif; ?>" style="background-image:url(<?php echo esc_attr( $featured_image_src ); ?>);">
 			<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
 				<h1 class="article-title"><?php the_title(); ?></h1>
 			<?php endif; ?>
@@ -27,7 +27,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 		</hgroup>
 
 		<?php
-		if ( is_singular() && in_array( $post_share_placement, array( 'top', 'both' ) ) ) {
+		if ( is_singular() && in_array( $post_share_placement, array( 'top', 'both' ), true ) ) {
 			get_template_part( 'parts/share-tools' );
 		}
 		?>
@@ -41,11 +41,11 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 				'after' => '</div>',
 			) );
 			?>
-		</div><?php if ( is_active_sidebar('sidebar') ) : ?><div class="article-extra"><?php dynamic_sidebar( 'sidebar' ); ?></div><?php endif; ?>
+		</div><?php if ( is_active_sidebar( 'sidebar' ) ) : ?><div class="article-extra"><?php dynamic_sidebar( 'sidebar' ); ?></div><?php endif; ?>
 	</div>
 	<footer class="article-footer">
 		<?php
-		if ( is_singular() && in_array( $post_share_placement, array( 'bottom', 'both' ) ) ) {
+		if ( is_singular() && in_array( $post_share_placement, array( 'bottom', 'both' ), true ) ) {
 			get_template_part( 'parts/share-tools' );
 		}
 		?>
@@ -55,7 +55,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 		echo '<dl class="categorized">';
 		echo '<dt><span class="categorized-default">Categorized</span></dt>';
 		foreach ( get_the_category() as $category ) {
-			echo '<dd><a href="' . get_category_link( $category->cat_ID ) . '">' . $category->cat_name . '</a></dd>';
+			echo '<dd><a href="' . esc_url( get_category_link( $category->cat_ID ) ) . '">' . esc_html( $category->cat_name ) . '</a></dd>';
 		}
 		echo '</dl>';
 	}
@@ -70,7 +70,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 			foreach ( $university_category_terms as $term ) {
 				$term_link = get_term_link( $term->term_id, 'wsuwp_university_category' );
 				if ( ! is_wp_error( $term_link ) ) {
-					echo '<dd><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></dd>';
+					echo '<dd><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></dd>';
 				}
 			}
 			echo '</dl>';
@@ -82,7 +82,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 		echo '<dl class="tagged">';
 		echo '<dt><span class="tagged-default">Tagged</span></dt>';
 		foreach ( get_the_tags() as $tag ) {
-			echo '<dd><a href="' . get_tag_link( $tag->term_id ) . '">' . $tag->name . '</a></dd>';
+			echo '<dd><a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . esc_html( $tag->name ) . '</a></dd>';
 		}
 		echo '</dl>';
 	}
@@ -97,7 +97,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 			foreach ( $university_location_terms as $term ) {
 				$term_link = get_term_link( $term->term_id, 'wsuwp_university_location' );
 				if ( ! is_wp_error( $term_link ) ) {
-					echo '<dd><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></dd>';
+					echo '<dd><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></dd>';
 				}
 			}
 			echo '</dl>';
@@ -114,6 +114,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 				echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 				?>
 			</div><!-- .author-avatar -->
+			<?php // @codingStandardsIgnoreStart ?>
 			<div class="author-description">
 				<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
 				<p><?php the_author_meta( 'description' ); ?></p>
@@ -125,6 +126,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 				</div><!-- .author-link	-->
 				<?php endif; ?>
 			</div><!-- .author-description -->
+			<?php // @codingStandardsIgnoreEnd ?>
 		</div><!-- .author-info -->
 	<?php endif; ?>
 	</footer><!-- .entry-meta -->
