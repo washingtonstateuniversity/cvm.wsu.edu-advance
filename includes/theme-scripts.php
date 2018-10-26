@@ -7,7 +7,7 @@ class Theme_Scripts {
 
 	public function __construct() {
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'add_dev_scripts' ), 99999 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'add_dev_scripts' ) );
 
 	} // End __construct
 
