@@ -27,6 +27,8 @@ class CVM_WSU_EDU_Advance {
 
 		require_once __DIR__ . '/includes/theme-customizer.php';
 
+		require_once __DIR__ . '/includes/theme-feeds.php';
+
 	} // End setup_theme
 
 
