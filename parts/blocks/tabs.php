@@ -15,3 +15,4 @@ $tab_3_label = get_theme_mod( 'home_tab_3', 'Tab 3' );
 	<?php if ( is_active_sidebar( 'home_tab_2' ) ) : ?><?php dynamic_sidebar( 'home_tab_2' ); ?><?php endif; ?>
 	<?php if ( is_active_sidebar( 'home_tab_3' ) ) : ?><?php dynamic_sidebar( 'home_tab_3' ); ?><?php endif; ?>
 </div>
+<?php if ( is_active_sidebar( 'home_after_tabs' ) ) : ?><div class="widget-area home-after-tabs"><?php dynamic_sidebar( 'home_after_tabs' ); ?></div><?php endif; ?>

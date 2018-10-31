@@ -15,3 +15,4 @@ $feature = $featured[0];
 		<a href="<?php echo esc_url( $feature['link'] ); ?>"><?php echo esc_html( $feature['title'] ); ?></a>
 	</div>
 </div>
+<?php if ( is_active_sidebar( 'home_after_banner' ) ) : ?><div class="widget-area home-after-banner"><?php dynamic_sidebar( 'home_after_banner' ); ?></div><?php endif; ?>
