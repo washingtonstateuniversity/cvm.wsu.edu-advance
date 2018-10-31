@@ -83,6 +83,16 @@ class Theme_Sidebars {
 				'before_title'  => '<h2 class="home-widget-title">',
 				'after_title'   => '</h2>',
 			),
+			array(
+				'name'          => __( 'Home After Features', 'spine' ),
+				'id'            => 'home_after_features',
+				'description'   => '',
+				'class'         => '',
+				'before_widget' => '<div class="home-widget">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="home-widget-title">',
+				'after_title'   => '</h2>',
+			),
 		);
 
 		foreach ( $sidebars as $sidebar ) {
