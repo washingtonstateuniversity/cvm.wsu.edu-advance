@@ -18,3 +18,4 @@ $featured = cmv_get_featured_posts();
 		<?php endforeach; ?>
 	</div>
 </div>
+<?php if ( is_active_sidebar( 'home_after_features' ) ) : ?><div class="widget-area home-after-features"><?php dynamic_sidebar( 'home_after_features' ); ?></div><?php endif; ?>
