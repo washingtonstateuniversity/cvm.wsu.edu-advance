@@ -63,6 +63,26 @@ class Theme_Sidebars {
 				'before_title'  => '<h2 class="tab-content-title">',
 				'after_title'   => '</h2>',
 			),
+			array(
+				'name'          => __( 'Home After Baner', 'spine' ),
+				'id'            => 'home_after_banner',
+				'description'   => '',
+				'class'         => '',
+				'before_widget' => '<div class="home-widget">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="home-widget-title">',
+				'after_title'   => '</h2>',
+			),
+			array(
+				'name'          => __( 'Home After Tabs', 'spine' ),
+				'id'            => 'home_after_tabs',
+				'description'   => '',
+				'class'         => '',
+				'before_widget' => '<div class="home-widget">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="home-widget-title">',
+				'after_title'   => '</h2>',
+			),
 		);
 
 		foreach ( $sidebars as $sidebar ) {
