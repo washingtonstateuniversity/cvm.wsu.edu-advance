@@ -6,24 +6,32 @@
 
 	<div class="column one">
 
-		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php
+		<?php if ( have_posts() ) : ?>
+			
+			<?php while ( have_posts() ) : the_post(); ?>
 
-			if ( is_search() ) {
+				<?php
 
-				get_template_part( 'articles/post', 'search' );
+				if ( is_search() ) {
 
-			} else {
+					get_template_part( 'articles/post', 'search' );
 
-				get_template_part( 'articles/post', get_post_type() );
+				} else {
 
-			};
+					get_template_part( 'articles/post', get_post_type() );
 
-			?>
+				};
 
-		<?php endwhile; ?>
+				?>
 
+			<?php endwhile; ?>
+
+		<?php elseif ( is_search() ) : ?>
+
+			<p class="search-results-empty">Sorry, no results were found for your search.</p>
+
+		<?php endif; ?>
 	</div><!--/column-->
 
 	<div class="column two">
