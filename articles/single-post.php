@@ -10,7 +10,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 	<header class="article-header">
 <hgroup class="article-title-banner<?php if ( ! empty( $featured_image_src ) ) : ?> has-featured-image <?php echo esc_attr( $featured_image_position ); ?><?php endif; ?>" style="background-image:url(<?php echo esc_attr( $featured_image_src ); ?>);">
 			<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
-				<h1 class="article-title"><?php the_title(); ?></h1>
+				<h1 class="article-title"><span><?php the_title(); ?></span></h1>
 			<?php endif; ?>
 		</hgroup>
 		<hgroup class="source">
