@@ -27,7 +27,7 @@ $img_array = cmv_get_post_image_array( get_the_ID(), 'large' );
 				?>
 			</cite>
 		</hgroup>
-		<?php if ( ! empty( $img_array ) ) : ?><hgroup class="caption"><?php echo esc_html( $img_array['caption'] ); ?></hgroup><?php endif; ?>
+		<?php if ( ! empty( $img_array['caption'] ) ) : ?><hgroup class="caption"><?php echo esc_html( $img_array['caption'] ); ?></hgroup><?php endif; ?>
 
 		<?php
 		if ( is_singular() && in_array( $post_share_placement, array( 'top', 'both' ), true ) ) {
