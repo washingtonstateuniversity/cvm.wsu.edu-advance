@@ -5,13 +5,15 @@ $featured_image_src = ( spine_has_featured_image() ) ? spine_get_featured_image_
 
 $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_image_position', true ) );
 
+$img_array = cmv_get_post_image_array( get_the_ID(), 'large' );
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="article-header">
-<hgroup class="article-title-banner<?php if ( ! empty( $featured_image_src ) ) : ?> has-featured-image <?php echo esc_attr( $featured_image_position ); ?><?php endif; ?>" style="background-image:url(<?php echo esc_attr( $featured_image_src ); ?>);">
-			<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
-				<h1 class="article-title"><span><?php the_title(); ?></span></h1>
-			<?php endif; ?>
+		<hgroup class="article-title-banner<?php if ( ! empty( $featured_image_src ) ) : ?> has-featured-image <?php echo esc_attr( $featured_image_position ); ?><?php endif; ?>" style="background-image:url(<?php echo esc_attr( $featured_image_src ); ?>);">
+		<?php if ( true === spine_get_option( 'articletitle_show' ) ) : ?>
+			<h1 class="article-title"><span><?php the_title(); ?></span></h1>
+		<?php endif; ?>
 		</hgroup>
 		<hgroup class="source">
 			<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
@@ -25,6 +27,7 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 				?>
 			</cite>
 		</hgroup>
+		<?php if ( ! empty( $img_array ) ) : ?><hgroup class="caption"><?php echo esc_html( $img_array['caption'] ); ?></</hgroup>><?php endif; ?>
 
 		<?php
 		if ( is_singular() && in_array( $post_share_placement, array( 'top', 'both' ), true ) ) {
@@ -36,10 +39,12 @@ $featured_image_position = esc_attr( get_post_meta( get_the_ID(), '_featured_ima
 		<div class="article-body">
 			<?php the_content(); ?>
 			<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'spine' ),
-				'after' => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'spine' ),
+					'after' => '</div>',
+				)
+			);
 			?>
 		</div><?php if ( is_active_sidebar( 'sidebar' ) ) : ?><div class="article-extra"><?php dynamic_sidebar( 'sidebar' ); ?></div><?php endif; ?>
 	</div>

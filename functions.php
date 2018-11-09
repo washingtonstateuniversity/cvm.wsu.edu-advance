@@ -31,8 +31,6 @@ class CVM_WSU_EDU_Advance {
 
 	} // End setup_theme
 
-
-
 } // End CVM_WSU_EDU_Advance
 
 $cvm_wsu_edu_advance = new CVM_WSU_EDU_Advance();
